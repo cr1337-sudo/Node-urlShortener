@@ -8,10 +8,14 @@ const ShortUrl = require("./models/ShortUrl")
 mongoose.connect("mongodb://localhost:27017/urlShortener",
    { useNewUrlParser: true, useUnifiedTopology: true })
 
-
+//carpeta de vistas
 app.set('views', path.join(__dirname, './views'));
+//Plantillas utilizdas
 app.set("view engine", "ejs")
+//url encoded
 app.use(express.urlencoded({ extended: false }))
+//Static files
+app.use(express.static(path.join(__dirname, "../public")))
 
 app.get('/', async (req, res) => {
    const shortUrls = await ShortUrl.find()

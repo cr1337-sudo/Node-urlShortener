@@ -4,17 +4,20 @@
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <link rel="stylesheet" href="/css/styles.css">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
 </head>
 
 <body>
-   <h1>URL Shrinker</h1>
-   <form action="/shortUrls" method="POST">
-      <label for="fullUrl">Url</label>
-      <input type="url" name="fullUrl" id="fullUrl">
-      <button type="submit">Shrink!</button>
-   </form>
+   <h1>URL SHRINKER</h1>
+   <div class="container">
+
+      <form action="/shortUrls" method="POST">
+         <input type="url" name="fullUrl" id="fullUrl">
+         <button class="submit-btn" type="submit">Shrink!</button>
+      </form>
+   </div>
 
    <table class="table table-striped table-responsive">
       <thead>

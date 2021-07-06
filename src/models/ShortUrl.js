@@ -19,3 +19,4 @@ const shortUrlSchema = new Schema({
 })
 
 module.exports = model("shortUrl", shortUrlSchema)
+
