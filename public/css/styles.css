@@ -48,11 +48,19 @@ input {
 
 .submit-btn {
   margin-top: 3.5rem;
-  padding: 1.8rem 4.5rem;
+  padding: 1.6rem 4.2rem;
   font-size: 1.9rem;
   border-radius: 3rem;
   border: none;
   cursor: pointer;
+}
+
+.submit-btn:hover{
+   background-color: #333c87;
+   color: white;
+}
+.submit-btn:active{
+   transform: scale(0.7);
 }
 
 .table-container{
