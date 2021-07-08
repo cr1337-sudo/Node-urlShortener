@@ -7,9 +7,15 @@ const urlsRoutes = require("./routes/ShortUrl")
 
 //DB CONNECTION
 const mongoose = require("mongoose")
-const MONGO_URI = process.env.MONGODB_URL || "mongodb://localhost:27017/urlShortener"
-mongoose.connect(MONGO_URI,
-   { useNewUrlParser: true, useUnifiedTopology: true })
+const uri = `mongodb+srv://cr1337:homerojs123@databases.wjmpl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+
+
+   try {
+mongoose.connect( uri, {useNewUrlParser: true, useUnifiedTopology: true}, () =>
+console.log("connected"));    
+}catch (error) { 
+console.log("could not connect");    
+}
 
 //carpeta de vistas
 app.set('views', path.join(__dirname, './views'));
