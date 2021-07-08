@@ -4,8 +4,12 @@ const ShortUrl = require("../models/ShortUrl")
 
 
 router.get('/', async (req, res) => {
-   const shortUrls = await ShortUrl.find()
-   res.render("index", { shortUrls })
+   try {
+      const shortUrls = await ShortUrl.find()
+      res.render("index", { shortUrls })
+   } catch (e) {
+      console.log(e)
+   }
 })
 
 router.post("/shortUrls", async (req, res) => {
@@ -21,12 +25,15 @@ router.post("/shortUrls", async (req, res) => {
 })
 
 router.get("/:shortUrl", async (req, res) => {
-
-   url = req.params.shortUrl
-   const shortUrl = await ShortUrl.findOne({ shortUrl: url })
-   shortUrl.clicks++
-   shortUrl.save()
-   res.redirect(shortUrl.fullUrl)
+   try {
+      url = req.params.shortUrl
+      const shortUrl = await ShortUrl.findOne({ shortUrl: url })
+      shortUrl.clicks++
+      shortUrl.save()
+      res.redirect(shortUrl.fullUrl)
+   } catch (e) {
+      console.log(e)
+   }
 })
 
 module.exports = router;
