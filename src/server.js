@@ -7,7 +7,8 @@ const urlsRoutes = require("./routes/ShortUrl")
 
 //DB CONNECTION
 const mongoose = require("mongoose")
-mongoose.connect("mongodb://localhost:27017/urlShortener",
+const MONGO_URI = process.env.MONGODB_URL || "mongodb://localhost:27017/urlShortener"
+mongoose.connect(MONGO_URI,
    { useNewUrlParser: true, useUnifiedTopology: true })
 
 //carpeta de vistas
