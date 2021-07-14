@@ -1,3 +1,6 @@
+TECNOLOGÍAS:
+HTML/CSS/NODE.JS/EXPRESS
+
 PRUEBA:
 
 🔴🔴 https://url-shrink-cr1337.herokuapp.com 🔴🔴
